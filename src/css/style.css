@@ -1,0 +1,59 @@
+body{
+    font-family: "Manrope", sans-serif;
+    height: 100vh;
+    background-color: var(--cor-fundo);
+}
+
+.principal-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cartao-conselhos{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 520px;
+    height: 330px;
+    padding: 15px 45px 45px;
+    border-radius: 15px;
+    background-color: var(--cor-cartao);
+    box-shadow: 15px 30px 30px hsl(220, 24%, 15%);
+}
+
+h1{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cor-destaque);
+}
+
+.conselho{
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--cor-texto);
+}
+
+.botao{
+    position: absolute;
+    bottom: -32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+    background-color: var(--cor-destaque);
+    transition: box-shadow .4s ease-in-out;
+}
+
+.botao:hover{
+    box-shadow: 0px 0px 35px var(--cor-destaque);
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./src/css/reset.css">
+  <link rel="stylesheet" href="./src/css/variables.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Advice generator app</title>
+</head>
+
+<body>
+  <main class="principal-container">
+    <div class="cartao-conselhos">
+      <h1>advice #<span id="numero-conselho"></span></h1>
+      <p id="conselho-gerado" class="conselho"></p>
+
+      <picture>
+        <source srcset="./src/images/pattern-divider-mobile.svg" media="(max-width: 450px)">
+        <img src="./src/images/pattern-divider-desktop.svg" alt="Linha divisória">
+      </picture>
+
+      <button id="btn-gerador-de-conselhos" class="botao">
+        <img class="imagem-dado" src="./src/images/icon-dice.svg" alt="Ícone de um dado">
+      </button>
+    </div>
+  </main>
+
+  <script src="./src/js/conselhos.js"></script>
+</body>
+
+</html>
