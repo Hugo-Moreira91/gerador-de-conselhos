@@ -42,7 +42,7 @@ Usuários poderão:
 ### Links
 
 - Endereço da solução: [Clique aqui para acessar o repositório do projeto](https://github.com/Hugo-Moreira91/gerador-de-conselhos)
-- Live Site URL: [Clique aqui para visualizar o projeto via GitHub Pages](https://hugo-moreira91.github.io/gerador-de-conselhos/)
+- Deploy: [Clique aqui para visualizar o projeto via GitHub Pages](https://hugo-moreira91.github.io/gerador-de-conselhos/)
 
 ## Processo de desenvolvimento
 
