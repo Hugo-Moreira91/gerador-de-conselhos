@@ -1,112 +1,106 @@
-# Frontend Mentor - Advice generator app solution
+<div align='center'>
 
-This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+# App Gerador de Conselhos
 
-## Table of contents
+![Quantidade de linguagens utilizadas](https://img.shields.io/badge/Linguagens-3-%#006600?style=flat)
+![API utilizada](https://img.shields.io/badge/API-Advise%20Slip-blue)
+![Versão do projeto](https://img.shields.io/badge/Versão-1.0.0-yellow)
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+</div>
+
+Esta é uma solução do [Advice generator app challenge](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db) do site Frontend Mentor.  
+O Frontend Mentor oferece diversos desafios que visam melhor nossas habilidades em codificar, construindo projetos similares ao que o mercado exige.
+
+## Tabela de conteúdos
+
+- [Visão Geral](#visao-geral)
+  - [Desafio](#desafio)
+  - [Funcionamento](#funcionamento)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Processo de desenvolvimento](#processo-de-desenvolvimento)
+  - [Construído com](#construído-com)
+  - [O que aprendi](#o-que-aprendi)
+  - [Aprimoramento contínuo](#aprimoramento-contínuo)
+  - [Links úteis](#links-úteis)
+- [Autor](#autor)
+- [Agradecimentos](#agradecimentos)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
-## Overview
+## Visão Geral
 
-### The challenge
+### Desafio
 
-Users should be able to:
+Usuários poderão:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Generate a new piece of advice by clicking the dice icon
+- Visualizar o projeto em qualquer tamanho de tela, devido a sua responsividade
+- Visualizar os estados de hover em todos os elementos interativos do projeto
+- Gerar um novo conselho a cada clique no botão, personalizado com o ícone de um dado
 
-### Screenshot
+### Funcionamento
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Vídeo demonstrativo do projeto em funcionamento](./src/images/projeto-em-funcionamento.gif)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Endereço da solução: [Clique aqui para acessar o repositório do projeto](https://github.com/Hugo-Moreira91/gerador-de-conselhos)
+- Live Site URL: [Clique aqui para visualizar o projeto via GitHub Pages](https://hugo-moreira91.github.io/gerador-de-conselhos/)
 
-## My process
+## Processo de desenvolvimento
 
-### Built with
+### Construído com
 
-- Semantic HTML5 markup
-- CSS custom properties
+- Marcações semânticas HTML5 para estruturação
+- Propriedades CSS customizadas para estilização
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Responsividade
+- [Advice Slip JSON API](https://api.adviceslip.com/)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### O que aprendi
 
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+- Uso da tag \<picture> para a exibição da linha entre o conselho e o botão, onde foi definido a alteração da imagem para dispositivos com até 450 pixels de largura.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  <picture>
+      <source srcset="./src/images/pattern-divider-mobile.svg" media="(max-width: 450px)">
+      <img src="./src/images/pattern-divider-desktop.svg" alt="Linha divisória">
+  </picture>
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Com isso, evita-se a necessidade de realizar a troca da imagem no arquivo destinado a responsividade do projeto.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- Utilização da API geradora de conselhos. Para isso, utilizou-se a função *fetch()* no endpoint da API (requisição). 
 
-### Continued development
+- O uso do *async* *await* para transformar as funções em assíncronas, bem como as respostas em objetos, respectivamente.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- Uso do *try* *catch* para capturar eventuais erros, para que os mesmos possam ser tratados.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Com o objeto JSON extraído, utilizou-se as propriedades **id** e **advise** para alterar, respectivamente, o número do conselho e o conselho em si, a cada clique no botão. Para ter o efeito desejado, a propriedade **innerText** dos elementos HTML no DOM foi a escolhida, uma vez que a atribuição ficou restrita a textos.
 
-### Useful resources
+- Uso do parâmetro literal para a exibição dos conselhos envolvidos em aspas duplas.
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+### Aprimoramento contínuo
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+Devo buscar aplicar e aprimorar a integração de API's em projetos futuros. Saber utilizar requisições, bem como extrair as respostas e informações úteis, de acordo com a situação proposta. Sem dúvidas isso será de grande valia para o meu crescimento como desenvolvedor.
 
-## Author
+### Links úteis
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+Abaixo seguem links de pesquisas os quais consultei para realizar o projeto:
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- [Funções assíncronas](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/async_function) - Auxiliou-me na construção das funções assíncronas, importantes em requisições de API's
+- [Método addEventListener()](https://www.w3schools.com/js/js_htmldom_eventlistener.asp) - Auxiliou-me na geração de novos conselhos a partir do clique sobre o botão. Ótimo site para esses e outros assuntos relacionados ao desenvolvimento web - [w3schools](https://www.w3schools.com/)
+- [Documentação da API utilizada no projeto](https://api.adviceslip.com/) - Importante documentação para auxiliar no desenvolvimento do projeto, com informações referentes ao endpoint que deve ser utilizado para a requisição, bem como a estrutura do objeto de resposta.
 
-## Acknowledgments
+## Autor
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- LinkedIn - [Hugo Moreira](https://www.linkedin.com/in/hugo-c%C3%A9sar-santos-moreira-a10823248/)
+- GitHub - [@Hugo-Moreira91](https://github.com/Hugo-Moreira91)
+- Frontend Mentor - [@Hugo-Moreira91](https://www.frontendmentor.io/profile/Hugo-Moreira91)
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Sempre em busca de conhecimento 🚀
+
+Feito com ❤️
+
+## Agradecimentos
+
+Agradecer aos conhecimentos passados pelos irmãos Roberto e Ricardo Dias, do [Dev em Dobro](https://www.instagram.com/devemdobro/#), em seu curso de desenvolvedor web full stack, denominado Dev Quest, bem como toda a sua comunidade no Discord.
