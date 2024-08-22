@@ -2,9 +2,9 @@
 
 # App Gerador de Conselhos
 
-![Quantidade de linguagens utilizadas](https://img.shields.io/badge/Linguagens-3-%#006600?style=flat)
-![API utilizada](https://img.shields.io/badge/API-Advise%20Slip-blue)
-![Versão do projeto](https://img.shields.io/badge/Versão-1.0.0-yellow)
+![Quantidade de linguagens utilizadas](https://img.shields.io/badge/Linguagens-3-green?style=flat)
+![API utilizada](https://img.shields.io/badge/API-Advise%20Slip-blue?style=flat)
+![Versão do projeto](https://img.shields.io/badge/Versão-1.0.0-yellow?style=flat)
 
 </div>
 
