@@ -25,8 +25,6 @@ O Frontend Mentor oferece diversos desafios que visam melhor nossas habilidades 
 - [Autor](#autor)
 - [Agradecimentos](#agradecimentos)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Visão Geral
 
 ### Desafio
