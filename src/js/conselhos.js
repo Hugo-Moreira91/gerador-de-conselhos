@@ -2,28 +2,29 @@ const btnConselhos = document.getElementById('btn-gerador-de-conselhos');
 const numeroConselho = document.getElementById('numero-conselho');
 const conselho = document.getElementById('conselho-gerado');
 
-btnConselhos.addEventListener('click', () => {
-    exibirConselhoGerado();
-})
-
 async function gerarConselho() {
-    const url = 'https://api.adviceslip.com/advice';
-
-    const resposta = await fetch(url);
-
-    return await resposta.json();
-}
-
-async function exibirConselhoGerado() {
     try {
-        const conselhoGerado = await gerarConselho();
+        const url = 'https://api.adviceslip.com/advice';
 
-        numeroConselho.innerText = conselhoGerado.slip.id;
+        const resposta = await fetch(url);
 
-        conselho.innerText = `"${conselhoGerado.slip.advice}"`;
-    } catch (err) {
-        console.log(err);
+        console.log(resposta);
+        
+
+        if (!resposta.ok) {
+            throw new Error("Ocorreu um erro ao tentar buscar as informações da API");
+        }
+
+        const conteudoDoConselho = await resposta.json();
+
+        numeroConselho.innerText = conteudoDoConselho.slip.id;
+        conselho.innerText = `"${conteudoDoConselho.slip.advice}"`;
+    } catch(err){
+        console.error("Erro ao tentar buscar as informações da API", err);
     }
+
 }
 
-exibirConselhoGerado();
+btnConselhos.addEventListener('click', gerarConselho);
+
+gerarConselho();
